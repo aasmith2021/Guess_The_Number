@@ -77,14 +77,27 @@ namespace Review
                 }
 
                 Console.WriteLine("\r\nDo you want to play again? Enter Y for \"Yes\" and N for \"No\".");
-                string playAgainString = Console.ReadLine();
-                if (playAgainString == "N")
+                string playAgainString = "";
+
+                while (playAgainString != "N" && playAgainString != "Y")
                 {
-                    playAgain = false;
+                    playAgainString = Console.ReadLine().ToUpper();
+                    
+                    if (playAgainString == "N")
+                    {
+                        playAgain = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid entry. Please enter Y for \"Yes\" and N for \"No\".");
+                    }
                 }
 
             }
             Console.WriteLine("\r\nThank you for playing! Have a great day!");
+            Console.WriteLine();
+            Console.WriteLine("Press \"Enter\" to exit the game.");
+            Console.ReadLine();
         }
     }
 }
